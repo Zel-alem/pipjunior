@@ -1,0 +1,258 @@
+:root {
+  --navy: #0d2c6b;
+  --gold: #f5c518;
+  --off-white: #fef9ee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background: var(--off-white);
+  color: var(--navy);
+  line-height: 1.6;
+}
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--navy);
+  padding: 1rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(13, 44, 107, 0.3);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+.owl {
+  font-size: 2rem;
+}
+
+.logo-text strong {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.7rem;
+}
+
+.logo-text span {
+  font-size: 0.75rem;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.nav-cta {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 0.7rem 1.6rem;
+  border-radius: 50px;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.hamburger {
+  display: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d2c6b, #1a3f96);
+  display: flex;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+.hero-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: clamp(2.5rem, 5.5vw, 4rem);
+  line-height: 1.1;
+  color: white;
+}
+
+.highlight {
+  color: var(--gold);
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.85);
+  margin: 1.5rem 0;
+}
+
+.badge {
+  display: inline-block;
+  background: rgba(245, 197, 24, 0.2);
+  color: var(--gold);
+  padding: 0.5rem 1.2rem;
+  border-radius: 50px;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--navy);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 900;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Sections */
+.section {
+  padding: 5rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-tag {
+  background: rgba(245,197,24,0.15);
+  color: #e0a800;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-weight: 900;
+  font-size: 0.85rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.feature {
+  background: white;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 5px 20px rgba(13,44,107,0.08);
+}
+
+.icon {
+  font-size: 2.5rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Tracker */
+.tracker-section {
+  background: var(--navy);
+  color: white;
+  padding: 5rem 5%;
+}
+
+.tracker-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tracker-text h2 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+/* Proof Strip */
+.proof-strip {
+  background: var(--gold);
+  padding: 1.2rem 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .nav-links {
+    position: fixed;
+    top: 75px;
+    left: 0;
+    right: 0;
+    background: var(--navy);
+    flex-direction: column;
+    padding: 2rem 5%;
+    gap: 1.5rem;
+    display: none;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .hero-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

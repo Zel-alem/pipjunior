@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse all Pip Junior Publishing books and workbooks for kids aged 3–12. Fun, story-based financial literacy resources." />
+  <title>Books – Pip Junior Publishing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <link rel="stylesheet" href="../css/books.css" />
+</head>
+<body>
+
+  <button class="btt" id="backToTop" aria-label="Back to top">↑</button>
+
+  <!-- NAV -->
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="owl-icon">🦉</div>
+        <div class="nav-logo-text"><strong>PipJunior</strong><span>Publishing</span></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="books.html" class="active">Books</a></li>
+        <li><a href="tracker.html">Free Tracker</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="books.html" class="nav-cta">🛒 Shop Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <!-- PAGE HERO -->
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-tag" style="margin-bottom:1rem;">Our Collection</span>
+      <h1>Books Kids <span class="gold-word">Actually Love</span></h1>
+      <p>Story-based financial literacy books and workbooks for every age, from curious toddlers to budding investors.</p>
+    </div>
+  </section>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar">
+    <div class="section-wrap">
+      <div class="filter-inner">
+        <span class="filter-label">Filter by age:</span>
+        <div class="filter-tabs" id="filterTabs">
+          <button class="filter-tab active" data-filter="all">All Ages</button>
+          <button class="filter-tab" data-filter="3-5">Ages 3–5</button>
+          <button class="filter-tab" data-filter="6-8">Ages 6–8</button>
+          <button class="filter-tab" data-filter="8-12">Ages 8–12</button>
+          <button class="filter-tab" data-filter="bundle">Bundles</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOOKS GRID -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="section-wrap">
+      <div class="books-grid" id="booksGrid"></div>
+    </div>
+  </section>
+
+  <!-- BUNDLE BANNER -->
+  <section class="bundle-banner">
+    <div class="section-wrap">
+      <div class="bundle-inner reveal">
+        <div class="bundle-emoji">📦</div>
+        <div class="bundle-copy">
+          <h2>Save Big with the Complete Bundle</h2>
+          <p>All books + the Money Habit Tracker + free digital downloads. Everything your child needs to master money — in one kit.</p>
+          <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.5rem;">
+            <a href="#complete-bundle" class="btn btn-gold btn-lg">🎁 Get the Bundle — $42.99</a>
+            <span class="savings-badge">Save $16!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="section-wrap" style="max-width:760px;">
+      <div class="section-center reveal" style="margin-bottom:2.5rem;">
+        <span class="section-tag">Questions</span>
+        <h2 class="section-title">Frequently Asked <span class="accent">Questions</span></h2>
+      </div>
+      <div class="faq-list" id="faqList">
+        <!-- injected by books.js -->
+      </div>
+    </div>
+  </section>
+
+  <div id="footerMount"></div>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+  <script src="../js/books.js"></script>
+</body>
+</html>

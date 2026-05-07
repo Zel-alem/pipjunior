@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Pip Junior Publishing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <style>
+    .about-story { display:grid; grid-template-columns:1fr 1fr; gap:4rem; align-items:center; }
+    .story-visual { background:linear-gradient(135deg,var(--navy),var(--navy-light)); border-radius:var(--radius-lg); padding:3rem; text-align:center; }
+    .story-visual .big { font-size:7rem; display:block; margin-bottom:1rem; animation:owlBob 3s ease-in-out infinite; }
+    @keyframes owlBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+    .story-visual h3 { font-family:'Fredoka One',cursive; color:#fff; font-size:1.4rem; margin-bottom:0.5rem; }
+    .story-visual p  { color:rgba(255,255,255,0.7); font-size:0.88rem; line-height:1.7; }
+    .values-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:2.5rem; }
+    .value-card  { background:#fff; border-radius:var(--radius-md); padding:2rem 1.5rem; text-align:center; box-shadow:var(--shadow-sm); border-top:4px solid var(--gold); transition:transform var(--ease); }
+    .value-card:hover { transform:translateY(-5px); }
+    .value-icon  { font-size:2.8rem; display:block; margin-bottom:0.8rem; }
+    .value-card h3 { font-family:'Fredoka One',cursive; color:var(--navy); font-size:1.1rem; margin-bottom:0.5rem; }
+    .value-card p  { font-size:0.85rem; color:var(--text-body); line-height:1.65; }
+    .team-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1.8rem; margin-top:2.5rem; }
+    .team-card { background:#fff; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); text-align:center; transition:transform var(--ease); }
+    .team-card:hover { transform:translateY(-5px); }
+    .team-avatar { height:140px; display:flex; align-items:center; justify-content:center; font-size:4.5rem; }
+    .team-avatar.t1 { background:linear-gradient(135deg,#1a3f96,#4ab8f0); }
+    .team-avatar.t2 { background:linear-gradient(135deg,#f5c518,#ff9a00); }
+    .team-avatar.t3 { background:linear-gradient(135deg,#3dcc6e,#009966); }
+    .team-info { padding:1.3rem; }
+    .team-info h3 { font-family:'Fredoka One',cursive; color:var(--navy); font-size:1.1rem; margin-bottom:0.25rem; }
+    .team-role { font-size:0.78rem; font-weight:900; color:var(--sky); letter-spacing:1px; text-transform:uppercase; margin-bottom:0.5rem; display:block; }
+    .team-info p { font-size:0.83rem; color:var(--text-body); line-height:1.6; }
+    .mission-banner { background:linear-gradient(135deg,var(--gold) 0%,var(--orange) 100%); padding:4rem 2rem; text-align:center; }
+    .mission-banner h2 { font-family:'Fredoka One',cursive; font-size:clamp(1.8rem,4vw,2.8rem); color:var(--navy); margin-bottom:0.8rem; }
+    .mission-banner p  { color:rgba(13,44,107,0.78); font-size:1.05rem; font-weight:700; max-width:620px; margin:0 auto 1.5rem; line-height:1.7; }
+    @media(max-width:900px){ .about-story,.values-grid,.team-grid{grid-template-columns:1fr;} }
+    @media(max-width:600px){ .values-grid{grid-template-columns:1fr 1fr;} }
+  </style>
+</head>
+<body>
+  <button class="btt" id="backToTop" aria-label="Back to top">↑</button>
+  <nav class="site-nav" id="siteNav">
+    <div class="nav-inner">
+      <a href="../index.html" class="nav-logo">
+        <div class="owl-icon">🦉</div>
+        <div class="nav-logo-text"><strong>PipJunior</strong><span>Publishing</span></div>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="books.html">Books</a></li>
+        <li><a href="tracker.html">Free Tracker</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="books.html" class="nav-cta">🛒 Shop Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+
+  <section class="page-hero">
+    <div class="page-hero-inner">
+      <span class="section-tag" style="margin-bottom:1rem;">Our Story</span>
+      <h1>About <span class="gold-word">Pip Junior</span></h1>
+      <p>We're on a mission to give every child the financial education that schools forget to teach.</p>
+    </div>
+  </section>
+
+  <!-- STORY -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="section-wrap">
+      <div class="about-story">
+        <div class="reveal" data-delay="0">
+          <span class="section-tag">How It Started</span>
+          <h2 class="section-title">Born from a <span class="accent">Real Problem</span></h2>
+          <p class="section-body" style="margin-bottom:1.2rem;">Pip Junior Publishing was founded by parents who noticed something missing in their children's education — money skills. Kids were learning to read, write, and do maths, but nobody was teaching them about saving, earning, or the difference between needs and wants.</p>
+          <p class="section-body">So we created <strong>Professor Pip</strong> — a wise, friendly owl who makes financial concepts feel like an adventure. Every book and worksheet is designed to spark curiosity and build habits that last a lifetime.</p>
+        </div>
+        <div class="story-visual reveal" data-delay="2">
+          <span class="big">🦉</span>
+          <h3>Professor Pip</h3>
+          <p>The wise owl who believes every child has the potential to be a money hero — they just need the right guide.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="section-pad" style="background:white;">
+    <div class="section-wrap">
+      <div class="section-center reveal">
+        <span class="section-tag">What We Stand For</span>
+        <h2 class="section-title">Our <span class="accent">Values</span></h2>
+      </div>
+      <div class="values-grid">
+        <div class="value-card reveal" data-delay="0"><span class="value-icon">🎯</span><h3>Accessible</h3><p>Financial literacy is for every child, regardless of background. Our tools are affordable and approachable.</p></div>
+        <div class="value-card reveal" data-delay="1"><span class="value-icon">🎨</span><h3>Engaging</h3><p>Learning should be fun. Every product is designed to spark joy, not anxiety, around money conversations.</p></div>
+        <div class="value-card reveal" data-delay="2"><span class="value-icon">🌱</span><h3>Age-Appropriate</h3><p>We meet children where they are — from simple saving concepts at age 3 to investing basics at 12.</p></div>
+        <div class="value-card reveal" data-delay="0"><span class="value-icon">👨‍👩‍👧</span><h3>Family-Centred</h3><p>Money habits start at home. Our materials are designed to be used together by parents and children.</p></div>
+        <div class="value-card reveal" data-delay="1"><span class="value-icon">📚</span><h3>Evidence-Based</h3><p>Our curriculum is informed by child development research and financial education best practices.</p></div>
+        <div class="value-card reveal" data-delay="2"><span class="value-icon">🌍</span><h3>Inclusive</h3><p>Our books celebrate diversity and feature characters from all backgrounds, so every child sees themselves.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="section-pad" style="background:var(--off-white);">
+    <div class="section-wrap">
+      <div class="section-center reveal"><span class="section-tag">The Team</span><h2 class="section-title">Meet the <span class="accent">People</span> Behind Pip</h2></div>
+      <div class="team-grid">
+        <div class="team-card reveal" data-delay="0">
+          <div class="team-avatar t1">👩</div>
+          <div class="team-info"><h3>Maya Johnson</h3><span class="team-role">Founder &amp; Author</span><p>Former teacher and mother of two, Maya created Pip Junior after realising her students knew nothing about money.</p></div>
+        </div>
+        <div class="team-card reveal" data-delay="1">
+          <div class="team-avatar t2">👨</div>
+          <div class="team-info"><h3>Daniel Osei</h3><span class="team-role">Illustrator &amp; Designer</span><p>Daniel brings Professor Pip and the world of money to life with vibrant, inclusive, joyful illustrations.</p></div>
+        </div>
+        <div class="team-card reveal" data-delay="2">
+          <div class="team-avatar t3">👩</div>
+          <div class="team-info"><h3>Priya Sharma</h3><span class="team-role">Curriculum Advisor</span><p>Child development specialist and financial educator who ensures every book is developmentally appropriate.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION BANNER -->
+  <section class="mission-banner reveal">
+    <div class="section-wrap">
+      <h2>Ready to raise a money-smart kid? 🦉</h2>
+      <p>Browse our collection of books and free resources designed to make financial literacy fun for the whole family.</p>
+      <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+        <a href="books.html"   class="btn btn-navy btn-lg">🛒 Shop Books</a>
+        <a href="tracker.html" class="btn btn-outline-navy btn-lg">🎁 Free Tracker</a>
+      </div>
+    </div>
+  </section>
+
+  <div id="footerMount"></div>
+  <script src="../js/data.js"></script>
+  <script src="../js/components.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
