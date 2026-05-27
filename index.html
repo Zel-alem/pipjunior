@@ -3,8 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Fun financial literacy books and resources for kids aged 3–12. Smart Habits. Bright Future.">
 <title>Pip Junior Publishing – Smart Habits. Bright Future.</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- ═══════════════════════════════════════════════════════════
+     GOOGLE ADSENSE — Replace ca-pub-XXXXXXXXXXXXXXXX with
+     your real Publisher ID from https://adsense.google.com
+═══════════════════════════════════════════════════════════ -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
 <style>
   :root {
     --navy: #0d2c6b;
@@ -21,770 +30,308 @@
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
   html { scroll-behavior: smooth; }
+  body { font-family: 'Nunito', sans-serif; background: var(--off-white); color: var(--text-dark); overflow-x: hidden; }
 
-  body {
-    font-family: 'Nunito', sans-serif;
-    background: var(--off-white);
-    color: var(--text-dark);
-    overflow-x: hidden;
-  }
-
-  /* ─── FLOATING COINS ─── */
-  .coin {
-    position: fixed;
-    font-size: 1.5rem;
-    opacity: 0.12;
-    pointer-events: none;
-    z-index: 0;
-    animation: floatCoin linear infinite;
-  }
-  @keyframes floatCoin {
-    0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
-    10% { opacity: 0.12; }
-    90% { opacity: 0.12; }
-    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
-  }
-
-  /* ─── NAV ─── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: var(--navy);
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 0.9rem 2.5rem;
-    box-shadow: 0 4px 20px rgba(13,44,107,0.4);
-  }
-  .nav-logo {
-    display: flex; align-items: center; gap: 0.6rem;
-    text-decoration: none;
-  }
-  .nav-logo .owl-icon {
-    width: 42px; height: 42px;
-    background: var(--gold);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem;
-    box-shadow: 0 0 0 3px rgba(245,197,24,0.3);
-  }
-  .nav-logo-text {
-    display: flex; flex-direction: column; line-height: 1.1;
-  }
-  .nav-logo-text strong {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.3rem;
-    color: var(--white);
-    letter-spacing: 0.5px;
-  }
-  .nav-logo-text span {
-    font-size: 0.65rem;
-    color: var(--gold);
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-  }
-  .nav-links {
-    display: flex; align-items: center; gap: 2rem;
-    list-style: none;
-  }
-  .nav-links a {
-    color: rgba(255,255,255,0.85);
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 0.9rem;
-    letter-spacing: 0.3px;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold); }
-  .nav-cta {
-    background: var(--gold);
-    color: var(--navy) !important;
-    padding: 0.5rem 1.3rem;
-    border-radius: 50px;
-    font-weight: 900 !important;
-    transition: transform 0.2s, box-shadow 0.2s !important;
-  }
-  .nav-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(245,197,24,0.5);
-  }
-
-  /* ─── HERO ─── */
-  .hero {
-    min-height: 100vh;
-    background: linear-gradient(135deg, var(--navy) 0%, #1a3f96 50%, #0a2050 100%);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    padding: 6rem 2.5rem 4rem;
-  }
-  .hero::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 70% 50%, rgba(74,184,240,0.15) 0%, transparent 60%),
-                radial-gradient(ellipse at 20% 80%, rgba(245,197,24,0.1) 0%, transparent 50%);
-  }
-  .hero-stars {
-    position: absolute; inset: 0; pointer-events: none;
-  }
-  .star {
-    position: absolute;
-    width: 4px; height: 4px;
-    background: white;
-    border-radius: 50%;
-    opacity: 0;
-    animation: twinkle ease-in-out infinite;
-  }
-  @keyframes twinkle {
-    0%, 100% { opacity: 0; transform: scale(0.5); }
-    50% { opacity: 0.7; transform: scale(1); }
-  }
-
-  .hero-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-    position: relative; z-index: 2;
-    width: 100%;
-  }
-  .hero-badge {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: rgba(245,197,24,0.15);
-    border: 1.5px solid rgba(245,197,24,0.4);
-    color: var(--gold);
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 1.2rem;
-    animation: fadeInDown 0.6s ease both;
-  }
-  .hero-title {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(2.4rem, 5vw, 3.8rem);
-    color: white;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-    animation: fadeInDown 0.7s ease 0.1s both;
-  }
-  .hero-title .highlight {
-    color: var(--gold);
-    position: relative;
-    display: inline-block;
-  }
-  .hero-title .highlight::after {
-    content: '';
-    position: absolute;
-    bottom: -4px; left: 0; right: 0;
-    height: 4px;
-    background: var(--gold);
-    border-radius: 2px;
-    opacity: 0.5;
-  }
-  .hero-sub {
-    font-size: 1.1rem;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.7;
-    margin-bottom: 2rem;
-    font-weight: 600;
-    animation: fadeInDown 0.7s ease 0.2s both;
-  }
-  .hero-sub span { color: var(--gold); font-weight: 800; }
-  .hero-btns {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    animation: fadeInDown 0.7s ease 0.3s both;
-  }
-  .btn-primary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: var(--gold);
-    color: var(--navy);
-    padding: 0.9rem 2rem;
-    border-radius: 50px;
-    font-weight: 900;
-    font-size: 1rem;
-    text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 8px 24px rgba(245,197,24,0.4);
-  }
-  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(245,197,24,0.5); }
-  .btn-secondary {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: transparent;
-    color: white;
-    padding: 0.9rem 2rem;
-    border-radius: 50px;
-    font-weight: 800;
-    font-size: 1rem;
-    text-decoration: none;
-    border: 2px solid rgba(255,255,255,0.4);
-    transition: all 0.2s;
-  }
-  .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: white; }
-
-  /* Hero visual side */
-  .hero-visual {
-    position: relative;
+  /* ── AD SLOTS ─────────────────────────────────────────────
+     These classes wrap every ad unit for consistent styling.
+     .ad-slot        = generic wrapper
+     .ad-leaderboard = 728×90 / responsive leaderboard
+     .ad-rectangle   = 336×280 / large rectangle
+     .ad-banner      = full-width strip between sections
+  ─────────────────────────────────────────────────────────── */
+  .ad-slot {
     display: flex;
     justify-content: center;
     align-items: center;
-    animation: fadeInRight 0.8s ease 0.2s both;
-  }
-  .hero-card {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    backdrop-filter: blur(10px);
-    border-radius: 28px;
-    padding: 2.5rem;
-    text-align: center;
-    position: relative;
     width: 100%;
-    max-width: 420px;
+    overflow: hidden;
   }
-  .owl-mascot {
-    font-size: 7rem;
-    line-height: 1;
-    margin-bottom: 1rem;
-    filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3));
-    animation: owlFloat 3s ease-in-out infinite;
-  }
-  @keyframes owlFloat {
-    0%, 100% { transform: translateY(0px) rotate(-2deg); }
-    50% { transform: translateY(-12px) rotate(2deg); }
-  }
-  .hero-card h3 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.5rem;
-    color: white;
-    margin-bottom: 0.5rem;
-  }
-  .hero-card p { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.5rem; }
-  .stat-pills {
-    display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap;
-  }
-  .stat-pill {
-    background: rgba(245,197,24,0.15);
-    border: 1px solid rgba(245,197,24,0.3);
-    color: var(--gold);
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: 800;
-  }
-  .floating-badge {
+  /* Label shown while ad loads / in dev */
+  .ad-slot::before {
+    content: attr(data-label);
     position: absolute;
-    background: white;
-    border-radius: 16px;
-    padding: 0.6rem 0.9rem;
-    display: flex; align-items: center; gap: 0.4rem;
-    font-size: 0.8rem;
-    font-weight: 800;
-    color: var(--navy);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-    animation: badgeFloat 4s ease-in-out infinite;
+    font-size: 0.6rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #bbb;
+    top: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    pointer-events: none;
   }
-  .floating-badge.b1 { top: -20px; right: -20px; animation-delay: 0s; }
-  .floating-badge.b2 { bottom: 30px; left: -30px; animation-delay: 1.5s; }
-  .floating-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
-  @keyframes badgeFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
+  .ad-slot { position: relative; }
+
+  /* Leaderboard – below nav */
+  .ad-leaderboard {
+    background: rgba(13,44,107,0.04);
+    border-top: 1px solid rgba(13,44,107,0.07);
+    border-bottom: 1px solid rgba(13,44,107,0.07);
+    padding: 0.5rem 0;
+    min-height: 100px;
+  }
+  /* Between-section banner */
+  .ad-banner {
+    background: rgba(245,197,24,0.06);
+    border-top: 1px solid rgba(245,197,24,0.18);
+    border-bottom: 1px solid rgba(245,197,24,0.18);
+    padding: 0.75rem 0;
+    min-height: 100px;
+  }
+  /* In-content rectangle */
+  .ad-rectangle {
+    background: #f5f8ff;
+    border: 1px solid rgba(13,44,107,0.08);
+    border-radius: 16px;
+    padding: 1rem;
+    min-height: 290px;
+    min-width: 280px;
+    max-width: 360px;
+    margin: 0 auto;
   }
 
-  /* ─── WAVE DIVIDER ─── */
+  /* ── FLOATING COINS ── */
+  .coin { position: fixed; font-size: 1.5rem; opacity: 0.12; pointer-events: none; z-index: 0; animation: floatCoin linear infinite; }
+  @keyframes floatCoin {
+    0%   { transform: translateY(110vh) rotate(0deg);   opacity: 0; }
+    10%  { opacity: 0.12; }
+    90%  { opacity: 0.12; }
+    100% { transform: translateY(-10vh) rotate(720deg); opacity: 0; }
+  }
+
+  /* ── NAV ── */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: var(--navy); display: flex; align-items: center; justify-content: space-between; padding: 0.9rem 2.5rem; box-shadow: 0 4px 20px rgba(13,44,107,0.4); }
+  .nav-logo { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; }
+  .nav-logo .owl-icon { width: 42px; height: 42px; background: var(--gold); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; box-shadow: 0 0 0 3px rgba(245,197,24,0.3); }
+  .nav-logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .nav-logo-text strong { font-family: 'Fredoka One', cursive; font-size: 1.3rem; color: var(--white); }
+  .nav-logo-text span { font-size: 0.65rem; color: var(--gold); font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+  .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+  .nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; font-weight: 700; font-size: 0.9rem; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.5rem 1.3rem; border-radius: 50px; font-weight: 900 !important; transition: transform 0.2s, box-shadow 0.2s !important; }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(245,197,24,0.5); }
+  /* Hamburger */
+  .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; background: transparent; border: none; cursor: pointer; padding: 6px; }
+  .hamburger span { display: block; width: 24px; height: 3px; background: white; border-radius: 3px; transition: all 0.3s; }
+  .hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .hamburger.open span:nth-child(2) { opacity: 0; }
+  .hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+  /* ── HERO ── */
+  .hero { min-height: 100vh; background: linear-gradient(135deg, var(--navy) 0%, #1a3f96 50%, #0a2050 100%); position: relative; overflow: hidden; display: flex; align-items: center; padding: 6rem 2.5rem 4rem; }
+  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 50%, rgba(74,184,240,0.15) 0%, transparent 60%), radial-gradient(ellipse at 20% 80%, rgba(245,197,24,0.1) 0%, transparent 50%); }
+  .hero-stars { position: absolute; inset: 0; pointer-events: none; }
+  .star { position: absolute; width: 4px; height: 4px; background: white; border-radius: 50%; opacity: 0; animation: twinkle ease-in-out infinite; }
+  @keyframes twinkle { 0%, 100% { opacity: 0; transform: scale(0.5); } 50% { opacity: 0.7; transform: scale(1); } }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; position: relative; z-index: 2; width: 100%; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(245,197,24,0.15); border: 1.5px solid rgba(245,197,24,0.4); color: var(--gold); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 1.2rem; animation: fadeInDown 0.6s ease both; }
+  .hero-title { font-family: 'Fredoka One', cursive; font-size: clamp(2.4rem, 5vw, 3.8rem); color: white; line-height: 1.1; margin-bottom: 1rem; animation: fadeInDown 0.7s ease 0.1s both; }
+  .hero-title .highlight { color: var(--gold); position: relative; display: inline-block; }
+  .hero-title .highlight::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 4px; background: var(--gold); border-radius: 2px; opacity: 0.5; }
+  .hero-sub { font-size: 1.1rem; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 2rem; font-weight: 600; animation: fadeInDown 0.7s ease 0.2s both; }
+  .hero-sub span { color: var(--gold); font-weight: 800; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeInDown 0.7s ease 0.3s both; }
+  .btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--navy); padding: 0.9rem 2rem; border-radius: 50px; font-weight: 900; font-size: 1rem; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 8px 24px rgba(245,197,24,0.4); }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(245,197,24,0.5); }
+  .btn-secondary { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: white; padding: 0.9rem 2rem; border-radius: 50px; font-weight: 800; font-size: 1rem; text-decoration: none; border: 2px solid rgba(255,255,255,0.4); transition: all 0.2s; }
+  .btn-secondary:hover { background: rgba(255,255,255,0.1); border-color: white; }
+  .hero-visual { position: relative; display: flex; justify-content: center; align-items: center; animation: fadeInRight 0.8s ease 0.2s both; }
+  .hero-card { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 28px; padding: 2.5rem; text-align: center; position: relative; width: 100%; max-width: 420px; }
+  .owl-mascot { font-size: 7rem; line-height: 1; margin-bottom: 1rem; filter: drop-shadow(0 10px 30px rgba(0,0,0,0.3)); animation: owlFloat 3s ease-in-out infinite; }
+  @keyframes owlFloat { 0%, 100% { transform: translateY(0px) rotate(-2deg); } 50% { transform: translateY(-12px) rotate(2deg); } }
+  .hero-card h3 { font-family: 'Fredoka One', cursive; font-size: 1.5rem; color: white; margin-bottom: 0.5rem; }
+  .hero-card p { color: rgba(255,255,255,0.7); font-size: 0.9rem; margin-bottom: 1.5rem; }
+  .stat-pills { display: flex; gap: 0.7rem; justify-content: center; flex-wrap: wrap; }
+  .stat-pill { background: rgba(245,197,24,0.15); border: 1px solid rgba(245,197,24,0.3); color: var(--gold); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.8rem; font-weight: 800; }
+  .floating-badge { position: absolute; background: white; border-radius: 16px; padding: 0.6rem 0.9rem; display: flex; align-items: center; gap: 0.4rem; font-size: 0.8rem; font-weight: 800; color: var(--navy); box-shadow: 0 8px 24px rgba(0,0,0,0.2); animation: badgeFloat 4s ease-in-out infinite; }
+  .floating-badge.b1 { top: -20px; right: -20px; }
+  .floating-badge.b2 { bottom: 30px; left: -30px; animation-delay: 1.5s; }
+  .floating-badge .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); }
+  @keyframes badgeFloat { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+  /* ── WAVES ── */
   .wave-divider { line-height: 0; }
   .wave-divider svg { display: block; width: 100%; }
 
-  /* ─── SOCIAL PROOF STRIP ─── */
-  .proof-strip {
-    background: var(--gold);
-    padding: 1rem 2.5rem;
-    display: flex; align-items: center; justify-content: center; gap: 3rem;
-    flex-wrap: wrap;
-  }
-  .proof-item {
-    display: flex; align-items: center; gap: 0.5rem;
-    font-weight: 800; color: var(--navy); font-size: 0.9rem;
-  }
+  /* ── PROOF STRIP ── */
+  .proof-strip { background: var(--gold); padding: 1rem 2.5rem; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+  .proof-item { display: flex; align-items: center; gap: 0.5rem; font-weight: 800; color: var(--navy); font-size: 0.9rem; }
 
-  /* ─── ABOUT SECTION ─── */
-  .section {
-    padding: 5rem 2.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .section-tag {
-    display: inline-block;
-    background: rgba(245,197,24,0.15);
-    border: 1.5px solid var(--gold);
-    color: var(--gold-dark);
-    padding: 0.3rem 1rem;
-    border-radius: 50px;
-    font-size: 0.75rem;
-    font-weight: 900;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-  .section-title {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
-    color: var(--navy);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
+  /* ── SECTIONS ── */
+  .section { padding: 5rem 2.5rem; max-width: 1200px; margin: 0 auto; }
+  .section-tag { display: inline-block; background: rgba(245,197,24,0.15); border: 1.5px solid var(--gold); color: var(--gold-dark); padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 900; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem; }
+  .section-title { font-family: 'Fredoka One', cursive; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--navy); line-height: 1.2; margin-bottom: 1rem; }
   .section-title .accent { color: var(--sky); }
-  .section-body {
-    font-size: 1.05rem;
-    color: var(--text-body);
-    line-height: 1.8;
-    max-width: 620px;
-  }
+  .section-body { font-size: 1.05rem; color: var(--text-body); line-height: 1.8; max-width: 620px; }
 
-  /* About Grid */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
-  }
-  .about-features {
-    display: flex; flex-direction: column; gap: 1.2rem;
-    margin-top: 2rem;
-  }
-  .feature-item {
-    display: flex; gap: 1rem; align-items: flex-start;
-    background: white;
-    border-radius: 16px;
-    padding: 1.2rem;
-    box-shadow: 0 4px 16px rgba(13,44,107,0.07);
-    border-left: 4px solid var(--gold);
-    transition: transform 0.2s;
-  }
+  /* ── ABOUT ── */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; }
+  .about-features { display: flex; flex-direction: column; gap: 1.2rem; margin-top: 2rem; }
+  .feature-item { display: flex; gap: 1rem; align-items: flex-start; background: white; border-radius: 16px; padding: 1.2rem; box-shadow: 0 4px 16px rgba(13,44,107,0.07); border-left: 4px solid var(--gold); transition: transform 0.2s; }
   .feature-item:hover { transform: translateX(6px); }
-  .feature-icon {
-    width: 44px; height: 44px; min-width: 44px;
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.4rem;
-  }
+  .feature-icon { width: 44px; height: 44px; min-width: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
   .feature-icon.blue { background: rgba(74,184,240,0.15); }
   .feature-icon.gold { background: rgba(245,197,24,0.15); }
   .feature-icon.green { background: rgba(61,204,110,0.15); }
   .feature-text strong { display: block; font-size: 0.95rem; font-weight: 800; color: var(--navy); }
   .feature-text span { font-size: 0.85rem; color: var(--text-body); }
-
-  .about-visual {
-    background: linear-gradient(135deg, var(--navy) 0%, #1a3f96 100%);
-    border-radius: 28px;
-    padding: 3rem;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-  }
-  .about-visual::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 0%, rgba(245,197,24,0.2) 0%, transparent 60%);
-  }
+  .about-visual { background: linear-gradient(135deg, var(--navy) 0%, #1a3f96 100%); border-radius: 28px; padding: 3rem; text-align: center; position: relative; overflow: hidden; }
+  .about-visual::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 0%, rgba(245,197,24,0.2) 0%, transparent 60%); }
   .about-visual .big-owl { font-size: 5rem; margin-bottom: 1rem; }
-  .about-visual h3 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.4rem; color: white; margin-bottom: 0.5rem;
-  }
+  .about-visual h3 { font-family: 'Fredoka One', cursive; font-size: 1.4rem; color: white; margin-bottom: 0.5rem; }
   .about-visual p { color: rgba(255,255,255,0.7); font-size: 0.85rem; line-height: 1.6; }
-  .topics-grid {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 1.5rem;
-  }
-  .topic-chip {
-    background: rgba(255,255,255,0.1);
-    border: 1px solid rgba(255,255,255,0.2);
-    color: white;
-    padding: 0.5rem;
-    border-radius: 10px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-align: center;
-  }
+  .topics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin-top: 1.5rem; }
+  .topic-chip { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: white; padding: 0.5rem; border-radius: 10px; font-size: 0.8rem; font-weight: 700; text-align: center; }
 
-  /* ─── BOOKS SECTION ─── */
-  .books-section {
-    background: linear-gradient(180deg, var(--off-white) 0%, #e8f4fd 100%);
-    padding: 5rem 2.5rem;
-  }
+  /* ── BOOKS ── */
+  .books-section { background: linear-gradient(180deg, var(--off-white) 0%, #e8f4fd 100%); padding: 5rem 2.5rem; }
   .books-inner { max-width: 1200px; margin: 0 auto; }
   .books-header { text-align: center; margin-bottom: 3rem; }
-  .books-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-  .book-card {
-    background: white;
-    border-radius: 24px;
-    overflow: hidden;
-    box-shadow: 0 8px 32px rgba(13,44,107,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    position: relative;
-  }
-  .book-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 48px rgba(13,44,107,0.18);
-  }
-  .book-card-img {
-    height: 200px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 5rem;
-    position: relative;
-    overflow: hidden;
-  }
+  .books-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem; }
+  .book-card { background: white; border-radius: 24px; overflow: hidden; box-shadow: 0 8px 32px rgba(13,44,107,0.1); transition: transform 0.3s, box-shadow 0.3s; position: relative; }
+  .book-card:hover { transform: translateY(-8px); box-shadow: 0 20px 48px rgba(13,44,107,0.18); }
+  .book-card-img { height: 200px; display: flex; align-items: center; justify-content: center; font-size: 5rem; position: relative; overflow: hidden; }
   .book-card-img.c1 { background: linear-gradient(135deg, #1a3f96, #4ab8f0); }
   .book-card-img.c2 { background: linear-gradient(135deg, #f5c518, #ff9a00); }
   .book-card-img.c3 { background: linear-gradient(135deg, #3dcc6e, #00a3a3); }
   .book-card-img.c4 { background: linear-gradient(135deg, #ff6b6b, #f5c518); }
-  .book-badge {
-    position: absolute; top: 12px; right: 12px;
-    background: white;
-    border-radius: 50px;
-    padding: 0.3rem 0.8rem;
-    font-size: 0.7rem;
-    font-weight: 900;
-    color: var(--navy);
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
+  .book-badge { position: absolute; top: 12px; right: 12px; background: white; border-radius: 50px; padding: 0.3rem 0.8rem; font-size: 0.7rem; font-weight: 900; color: var(--navy); box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
   .book-info { padding: 1.5rem; }
-  .book-age {
-    font-size: 0.7rem;
-    font-weight: 900;
-    color: var(--sky);
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-bottom: 0.4rem;
-  }
-  .book-info h3 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.2rem;
-    color: var(--navy);
-    margin-bottom: 0.4rem;
-  }
+  .book-age { font-size: 0.7rem; font-weight: 900; color: var(--sky); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.4rem; }
+  .book-info h3 { font-family: 'Fredoka One', cursive; font-size: 1.2rem; color: var(--navy); margin-bottom: 0.4rem; }
   .book-info p { font-size: 0.85rem; color: var(--text-body); line-height: 1.5; margin-bottom: 1rem; }
   .book-topics { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-bottom: 1rem; }
-  .topic-tag {
-    background: rgba(13,44,107,0.07);
-    color: var(--navy);
-    padding: 0.2rem 0.6rem;
-    border-radius: 50px;
-    font-size: 0.7rem;
-    font-weight: 800;
-  }
-  .book-footer {
-    display: flex; align-items: center; justify-content: space-between;
-    padding-top: 0.8rem;
-    border-top: 1px solid rgba(13,44,107,0.08);
-  }
-  .book-price {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.3rem;
-    color: var(--navy);
-  }
+  .topic-tag { background: rgba(13,44,107,0.07); color: var(--navy); padding: 0.2rem 0.6rem; border-radius: 50px; font-size: 0.7rem; font-weight: 800; }
+  .book-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 0.8rem; border-top: 1px solid rgba(13,44,107,0.08); }
+  .book-price { font-family: 'Fredoka One', cursive; font-size: 1.3rem; color: var(--navy); }
   .book-price .orig { font-size: 0.85rem; color: #999; text-decoration: line-through; font-family: 'Nunito'; font-weight: 600; margin-right: 0.3rem; }
-  .btn-buy {
-    background: var(--navy);
-    color: white;
-    padding: 0.5rem 1.2rem;
-    border-radius: 50px;
-    font-weight: 900;
-    font-size: 0.85rem;
-    text-decoration: none;
-    transition: all 0.2s;
-    display: inline-flex; align-items: center; gap: 0.3rem;
-  }
+  .btn-buy { background: var(--navy); color: white; padding: 0.5rem 1.2rem; border-radius: 50px; font-weight: 900; font-size: 0.85rem; text-decoration: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 0.3rem; }
   .btn-buy:hover { background: var(--gold); color: var(--navy); transform: scale(1.05); }
 
-  /* ─── FREE TRACKER ─── */
-  .tracker-section {
-    background: var(--navy);
-    padding: 5rem 2.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .tracker-section::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 80% 50%, rgba(74,184,240,0.15) 0%, transparent 60%),
-                radial-gradient(ellipse at 10% 50%, rgba(245,197,24,0.1) 0%, transparent 50%);
-  }
-  .tracker-inner {
-    max-width: 1000px; margin: 0 auto;
-    display: grid; grid-template-columns: 1fr 1fr;
-    gap: 4rem; align-items: center;
-    position: relative; z-index: 2;
-  }
+  /* ── TRACKER ── */
+  .tracker-section { background: var(--navy); padding: 5rem 2.5rem; position: relative; overflow: hidden; }
+  .tracker-section::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 80% 50%, rgba(74,184,240,0.15) 0%, transparent 60%), radial-gradient(ellipse at 10% 50%, rgba(245,197,24,0.1) 0%, transparent 50%); }
+  .tracker-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; position: relative; z-index: 2; }
   .tracker-content .section-tag { background: rgba(245,197,24,0.15); color: var(--gold); border-color: rgba(245,197,24,0.3); }
   .tracker-content .section-title { color: white; }
   .tracker-content .section-body { color: rgba(255,255,255,0.75); }
   .tracker-features { display: flex; flex-direction: column; gap: 0.8rem; margin: 1.5rem 0 2rem; }
-  .tracker-feat {
-    display: flex; align-items: center; gap: 0.7rem;
-    color: rgba(255,255,255,0.85);
-    font-weight: 700; font-size: 0.9rem;
-  }
-  .tracker-feat .check {
-    width: 22px; height: 22px; min-width: 22px;
-    background: var(--green);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.7rem; color: white;
-  }
-  .tracker-visual {
-    background: rgba(255,255,255,0.07);
-    border: 1px solid rgba(255,255,255,0.15);
-    border-radius: 24px;
-    padding: 2rem;
-    backdrop-filter: blur(10px);
-  }
+  .tracker-feat { display: flex; align-items: center; gap: 0.7rem; color: rgba(255,255,255,0.85); font-weight: 700; font-size: 0.9rem; }
+  .tracker-feat .check { width: 22px; height: 22px; min-width: 22px; background: var(--green); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; color: white; }
+  .tracker-visual { background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15); border-radius: 24px; padding: 2rem; backdrop-filter: blur(10px); }
   .tracker-visual .tracker-icon { font-size: 4rem; text-align: center; margin-bottom: 1rem; }
-  .tracker-sheet {
-    background: white;
-    border-radius: 16px;
-    padding: 1.2rem;
-    margin-bottom: 1rem;
-  }
-  .tracker-sheet h4 {
-    font-family: 'Fredoka One', cursive;
-    color: var(--navy); font-size: 1rem;
-    margin-bottom: 0.8rem;
-    display: flex; align-items: center; gap: 0.4rem;
-  }
-  .tracker-row {
-    display: flex; justify-content: space-between; align-items: center;
-    padding: 0.4rem 0;
-    border-bottom: 1px solid rgba(13,44,107,0.08);
-    font-size: 0.8rem; font-weight: 700; color: var(--text-body);
-  }
+  .tracker-sheet { background: white; border-radius: 16px; padding: 1.2rem; margin-bottom: 1rem; }
+  .tracker-sheet h4 { font-family: 'Fredoka One', cursive; color: var(--navy); font-size: 1rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.4rem; }
+  .tracker-row { display: flex; justify-content: space-between; align-items: center; padding: 0.4rem 0; border-bottom: 1px solid rgba(13,44,107,0.08); font-size: 0.8rem; font-weight: 700; color: var(--text-body); }
   .tracker-row:last-child { border-bottom: none; }
   .stars { color: var(--gold); letter-spacing: -2px; }
 
-  /* ─── WHO IS IT FOR ─── */
+  /* ── AUDIENCE ── */
   .audience-section { padding: 5rem 2.5rem; background: var(--off-white); }
   .audience-inner { max-width: 1200px; margin: 0 auto; }
   .audience-header { text-align: center; margin-bottom: 3rem; }
-  .audience-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .audience-card {
-    border-radius: 24px;
-    padding: 2.5rem 2rem;
-    text-align: center;
-    position: relative; overflow: hidden;
-    transition: transform 0.3s;
-  }
+  .audience-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .audience-card { border-radius: 24px; padding: 2.5rem 2rem; text-align: center; position: relative; overflow: hidden; transition: transform 0.3s; }
   .audience-card:hover { transform: translateY(-6px); }
   .audience-card.kids { background: linear-gradient(135deg, #4ab8f0, #1a3f96); }
   .audience-card.parents { background: linear-gradient(135deg, #f5c518, #ff9a00); }
   .audience-card.teachers { background: linear-gradient(135deg, #3dcc6e, #00a3a3); }
   .audience-emoji { font-size: 3.5rem; margin-bottom: 1rem; }
-  .audience-card h3 {
-    font-family: 'Fredoka One', cursive;
-    font-size: 1.4rem; color: white;
-    margin-bottom: 0.7rem;
-  }
+  .audience-card h3 { font-family: 'Fredoka One', cursive; font-size: 1.4rem; color: white; margin-bottom: 0.7rem; }
   .audience-card p { color: rgba(255,255,255,0.85); font-size: 0.9rem; line-height: 1.6; }
-  .audience-list {
-    list-style: none; margin-top: 1.2rem; text-align: left;
-    display: flex; flex-direction: column; gap: 0.5rem;
-  }
-  .audience-list li {
-    color: rgba(255,255,255,0.9); font-size: 0.85rem; font-weight: 700;
-    display: flex; gap: 0.5rem; align-items: center;
-  }
+  .audience-list { list-style: none; margin-top: 1.2rem; text-align: left; display: flex; flex-direction: column; gap: 0.5rem; }
+  .audience-list li { color: rgba(255,255,255,0.9); font-size: 0.85rem; font-weight: 700; display: flex; gap: 0.5rem; align-items: center; }
   .audience-list li::before { content: '✦'; color: rgba(255,255,255,0.6); flex-shrink: 0; }
 
-  /* ─── TESTIMONIALS ─── */
-  .testimonials-section {
-    background: white;
-    padding: 5rem 2.5rem;
-  }
+  /* ── TESTIMONIALS ── */
+  .testimonials-section { background: white; padding: 5rem 2.5rem; }
   .testimonials-inner { max-width: 1200px; margin: 0 auto; }
   .testimonials-header { text-align: center; margin-bottom: 3rem; }
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .testimonial-card {
-    background: var(--off-white);
-    border-radius: 20px;
-    padding: 2rem;
-    border-left: 4px solid var(--gold);
-    position: relative;
-  }
-  .testimonial-card::before {
-    content: '"';
-    font-family: 'Fredoka One', cursive;
-    font-size: 5rem;
-    color: var(--gold);
-    opacity: 0.2;
-    position: absolute;
-    top: -10px; left: 15px;
-    line-height: 1;
-  }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .testimonial-card { background: var(--off-white); border-radius: 20px; padding: 2rem; border-left: 4px solid var(--gold); position: relative; }
+  .testimonial-card::before { content: '"'; font-family: 'Fredoka One', cursive; font-size: 5rem; color: var(--gold); opacity: 0.2; position: absolute; top: -10px; left: 15px; line-height: 1; }
   .testimonial-stars { color: var(--gold); font-size: 1rem; margin-bottom: 0.8rem; }
-  .testimonial-card blockquote {
-    font-size: 0.95rem;
-    color: var(--text-body);
-    line-height: 1.7;
-    font-weight: 600;
-    font-style: italic;
-    margin-bottom: 1.2rem;
-  }
-  .testimonial-author {
-    display: flex; align-items: center; gap: 0.8rem;
-  }
-  .author-avatar {
-    width: 42px; height: 42px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.2rem;
-  }
+  .testimonial-card blockquote { font-size: 0.95rem; color: var(--text-body); line-height: 1.7; font-weight: 600; font-style: italic; margin-bottom: 1.2rem; }
+  .testimonial-author { display: flex; align-items: center; gap: 0.8rem; }
+  .author-avatar { width: 42px; height: 42px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
   .author-avatar.a1 { background: #fee2e2; }
   .author-avatar.a2 { background: #dbeafe; }
   .author-avatar.a3 { background: #dcfce7; }
   .author-name { font-weight: 900; font-size: 0.85rem; color: var(--navy); display: block; }
   .author-role { font-size: 0.75rem; color: #888; font-weight: 700; }
 
-  /* ─── FREE TRACKER CTA ─── */
-  .final-cta {
-    background: linear-gradient(135deg, var(--gold) 0%, #ff9a00 100%);
-    padding: 5rem 2.5rem;
-    text-align: center;
-    position: relative; overflow: hidden;
-  }
-  .final-cta::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.2) 0%, transparent 60%);
-  }
+  /* ── FINAL CTA ── */
+  .final-cta { background: linear-gradient(135deg, var(--gold) 0%, #ff9a00 100%); padding: 5rem 2.5rem; text-align: center; position: relative; overflow: hidden; }
+  .final-cta::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 50%, rgba(255,255,255,0.2) 0%, transparent 60%); }
   .final-cta-inner { position: relative; z-index: 2; max-width: 700px; margin: 0 auto; }
-  .final-cta h2 {
-    font-family: 'Fredoka One', cursive;
-    font-size: clamp(2rem, 5vw, 3rem);
-    color: var(--navy);
-    margin-bottom: 1rem;
-  }
+  .final-cta h2 { font-family: 'Fredoka One', cursive; font-size: clamp(2rem, 5vw, 3rem); color: var(--navy); margin-bottom: 1rem; }
   .final-cta p { color: rgba(13,44,107,0.8); font-size: 1.1rem; font-weight: 700; margin-bottom: 2rem; }
   .final-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-  .btn-dark {
-    background: var(--navy);
-    color: white;
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-weight: 900;
-    font-size: 1rem;
-    text-decoration: none;
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 8px 24px rgba(13,44,107,0.3);
-  }
+  .btn-dark { background: var(--navy); color: white; padding: 1rem 2.5rem; border-radius: 50px; font-weight: 900; font-size: 1rem; text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 8px 24px rgba(13,44,107,0.3); }
   .btn-dark:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(13,44,107,0.4); }
-  .btn-outline-dark {
-    background: transparent;
-    color: var(--navy);
-    padding: 1rem 2.5rem;
-    border-radius: 50px;
-    font-weight: 900;
-    font-size: 1rem;
-    text-decoration: none;
-    border: 2.5px solid var(--navy);
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    transition: all 0.2s;
-  }
+  .btn-outline-dark { background: transparent; color: var(--navy); padding: 1rem 2.5rem; border-radius: 50px; font-weight: 900; font-size: 1rem; text-decoration: none; border: 2.5px solid var(--navy); display: inline-flex; align-items: center; gap: 0.5rem; transition: all 0.2s; }
   .btn-outline-dark:hover { background: rgba(13,44,107,0.1); }
 
-  /* ─── FOOTER ─── */
-  footer {
-    background: var(--navy);
-    color: rgba(255,255,255,0.7);
-    padding: 3rem 2.5rem 2rem;
-  }
-  .footer-inner {
-    max-width: 1200px; margin: 0 auto;
-    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
-    gap: 3rem;
-  }
+  /* ── FOOTER ── */
+  footer { background: var(--navy); color: rgba(255,255,255,0.7); padding: 3rem 2.5rem 2rem; }
+  .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; }
   .footer-brand p { font-size: 0.85rem; line-height: 1.7; margin-top: 1rem; max-width: 280px; }
-  .footer-col h4 {
-    font-family: 'Fredoka One', cursive;
-    color: white; font-size: 1rem; margin-bottom: 1rem;
-  }
+  .footer-col h4 { font-family: 'Fredoka One', cursive; color: white; font-size: 1rem; margin-bottom: 1rem; }
   .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
   .footer-col ul a { color: rgba(255,255,255,0.65); text-decoration: none; font-size: 0.85rem; font-weight: 700; transition: color 0.2s; }
   .footer-col ul a:hover { color: var(--gold); }
-  .footer-bottom {
-    max-width: 1200px; margin: 2.5rem auto 0;
-    padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
-  }
+  .footer-bottom { max-width: 1200px; margin: 2.5rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   .footer-bottom p { font-size: 0.8rem; }
-  .footer-tagline {
-    font-family: 'Fredoka One', cursive;
-    color: var(--gold);
-    font-size: 0.9rem;
-  }
+  .footer-tagline { font-family: 'Fredoka One', cursive; color: var(--gold); font-size: 0.9rem; }
   .social-links { display: flex; gap: 0.8rem; }
-  .social-link {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.1);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.9rem;
-    transition: background 0.2s;
-    cursor: pointer;
-  }
+  .social-link { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; transition: background 0.2s; cursor: pointer; }
   .social-link:hover { background: var(--gold); }
 
-  /* Animations */
-  @keyframes fadeInDown {
-    from { opacity: 0; transform: translateY(-20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeInRight {
-    from { opacity: 0; transform: translateX(30px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
+  /* ── BACK TO TOP ── */
+  .btt { position: fixed; bottom: 1.8rem; right: 1.8rem; z-index: 500; width: 46px; height: 46px; border-radius: 50%; background: var(--navy); color: #fff; border: none; font-size: 1.2rem; font-weight: 900; cursor: pointer; box-shadow: 0 4px 16px rgba(13,44,107,0.3); opacity: 0; transform: translateY(10px); transition: opacity 0.25s, transform 0.25s; pointer-events: none; }
+  .btt.show { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .btt:hover { background: var(--navy-light, #1a3f96); }
 
-  /* Scroll reveal */
+  /* ── ANIMATIONS ── */
+  @keyframes fadeInDown  { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeInRight { from { opacity: 0; transform: translateX(30px);  } to { opacity: 1; transform: translateX(0); } }
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* Responsive */
+  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     .hero-inner, .about-grid, .tracker-inner, .footer-inner { grid-template-columns: 1fr; }
     .audience-cards, .testimonials-grid { grid-template-columns: 1fr; }
     .hero-visual { display: none; }
-    .nav-links { display: none; }
+    .nav-links { display: none; flex-direction: column; position: fixed; top: 68px; right: 0; width: 260px; height: calc(100vh - 68px); background: var(--navy); padding: 1.5rem; gap: 0.5rem; box-shadow: -4px 0 20px rgba(0,0,0,0.3); overflow-y: auto; }
+    .nav-links.open { display: flex; }
+    .nav-links a { display: block; padding: 0.7rem 1rem; border-radius: 10px; font-size: 1rem; }
+    .nav-links .nav-cta { margin-top: 0.5rem; text-align: center; }
+    .hamburger { display: flex; }
     .footer-inner { grid-template-columns: 1fr 1fr; }
   }
   @media (max-width: 600px) {
     .books-grid { grid-template-columns: 1fr; }
     .footer-inner { grid-template-columns: 1fr; }
+    .proof-strip { gap: 1rem; }
+    .ad-leaderboard, .ad-banner { min-height: 60px; }
   }
 </style>
 </head>
 <body>
 
-<!-- Floating coins bg -->
+<!-- Floating coins -->
 <div id="coins-container"></div>
 
-<!-- ─── NAV ─── -->
+<!-- Back to top -->
+<button class="btt" id="backToTop" aria-label="Back to top">↑</button>
+
+<!-- ═══════════════════════════════════════════════════════
+     NAV
+═══════════════════════════════════════════════════════ -->
 <nav>
   <a href="#" class="nav-logo">
     <div class="owl-icon">🦉</div>
@@ -793,16 +340,38 @@
       <span>Publishing</span>
     </div>
   </a>
-  <ul class="nav-links">
+  <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#books">Books</a></li>
     <li><a href="#tracker">Free Tracker</a></li>
     <li><a href="#audience">Who It's For</a></li>
     <li><a href="#books" class="nav-cta">🛒 Shop Now</a></li>
   </ul>
+  <button class="hamburger" id="hamburger" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
-<!-- ─── HERO ─── -->
+<!-- ═══════════════════════════════════════════════════════
+     AD SLOT 1 — LEADERBOARD BELOW NAV
+     Best for: 728×90 desktop / 320×50 mobile
+     Shown immediately when page loads — high visibility.
+     Google AdSense: "Leaderboard" or Auto ad unit.
+═══════════════════════════════════════════════════════ -->
+<div class="ad-slot ad-leaderboard" data-label="Advertisement" style="margin-top:68px;">
+  <!-- REPLACE everything inside this div with your AdSense snippet -->
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="1111111111"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════ -->
 <section class="hero" id="home">
   <div class="hero-stars" id="hero-stars"></div>
   <div class="hero-inner">
@@ -814,7 +383,8 @@
         Before School<br>Fails Them
       </h1>
       <p class="hero-sub">
-        Fun, simple tools that help kids understand <span>saving</span>, <span>spending</span>, and <span>earning</span> — without boring lectures.
+        Fun, simple tools that help kids understand <span>saving</span>,
+        <span>spending</span>, and <span>earning</span> — without boring lectures.
       </p>
       <div class="hero-btns">
         <a href="#books" class="btn-primary">🛒 Shop Books</a>
@@ -839,28 +409,45 @@
   </div>
 </section>
 
-<!-- Wave -->
 <div class="wave-divider">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
     <path fill="#f5c518" d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z"/>
   </svg>
 </div>
 
-<!-- ─── PROOF STRIP ─── -->
+<!-- PROOF STRIP -->
 <div class="proof-strip">
   <div class="proof-item">⭐⭐⭐⭐⭐ <span>5-Star Reviews</span></div>
-  <div class="proof-item">📚 <span>Multiple Titles Available</span></div>
+  <div class="proof-item">📚 <span>Multiple Titles</span></div>
   <div class="proof-item">🌍 <span>Shipped Worldwide</span></div>
   <div class="proof-item">🎯 <span>Ages 3–12</span></div>
   <div class="proof-item">🎁 <span>Free Digital Tracker</span></div>
 </div>
+
 <div class="wave-divider">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 80" preserveAspectRatio="none">
     <path fill="#fef9ee" d="M0,40 C360,0 1080,80 1440,40 L1440,0 L0,0 Z"/>
   </svg>
 </div>
 
-<!-- ─── ABOUT ─── -->
+<!-- ═══════════════════════════════════════════════════════
+     AD SLOT 2 — BANNER BETWEEN PROOF STRIP & ABOUT
+     Best for: 970×90 billboard or 728×90 leaderboard.
+     Catches readers scrolling from the hero.
+═══════════════════════════════════════════════════════ -->
+<div class="ad-slot ad-banner" data-label="Advertisement">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="2222222222"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ABOUT
+═══════════════════════════════════════════════════════ -->
 <div class="section" id="about">
   <div class="about-grid reveal">
     <div>
@@ -885,7 +472,7 @@
         <div class="feature-item">
           <div class="feature-icon green">👨‍👩‍👧</div>
           <div class="feature-text">
-            <strong>Parent & Teacher Friendly</strong>
+            <strong>Parent &amp; Teacher Friendly</strong>
             <span>Easy to use at home or in the classroom — no finance degree required!</span>
           </div>
         </div>
@@ -909,7 +496,24 @@
   </div>
 </div>
 
-<!-- ─── BOOKS ─── -->
+<!-- ═══════════════════════════════════════════════════════
+     AD SLOT 3 — BANNER BEFORE BOOKS SECTION
+     Best for: 970×250 billboard or responsive.
+     High-intent placement — readers are about to shop.
+═══════════════════════════════════════════════════════ -->
+<div class="ad-slot ad-banner" data-label="Advertisement">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="3333333333"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     BOOKS SECTION
+═══════════════════════════════════════════════════════ -->
 <section class="books-section" id="books">
   <div class="books-inner">
     <div class="books-header reveal">
@@ -918,20 +522,14 @@
       <p class="section-body" style="margin: 0 auto; text-align: center;">Vibrant stories and activity books that turn money conversations from awkward to awesome.</p>
     </div>
     <div class="books-grid">
+
       <div class="book-card reveal">
-        <div class="book-card-img c1">
-          <span>📗</span>
-          <div class="book-badge">⭐ Bestseller</div>
-        </div>
+        <div class="book-card-img c1"><span>📗</span><div class="book-badge">⭐ Bestseller</div></div>
         <div class="book-info">
           <div class="book-age">Ages 4–8</div>
           <h3>Pip's First Dollar</h3>
           <p>A Money Adventure — join Pip as he discovers how coins work, what saving means, and why patience pays off.</p>
-          <div class="book-topics">
-            <span class="topic-tag">Saving</span>
-            <span class="topic-tag">Earning</span>
-            <span class="topic-tag">Goals</span>
-          </div>
+          <div class="book-topics"><span class="topic-tag">Saving</span><span class="topic-tag">Earning</span><span class="topic-tag">Goals</span></div>
           <div class="book-footer">
             <div class="book-price"><span class="orig">$18</span>$14.99</div>
             <a href="#" class="btn-buy">🛒 Buy Now</a>
@@ -939,20 +537,30 @@
         </div>
       </div>
 
-      <div class="book-card reveal">
-        <div class="book-card-img c2">
-          <span>📒</span>
-          <div class="book-badge">🆕 New</div>
+      <!-- ═══════════════════════════════════════════════
+           AD SLOT 4 — IN-GRID RECTANGLE (between books)
+           Best for: 300×250 or 336×280 rectangle.
+           Sits naturally in the book grid — high CTR.
+      ═══════════════════════════════════════════════════ -->
+      <div class="ad-slot" data-label="Advertisement" style="display:flex;align-items:stretch;">
+        <div class="ad-rectangle" style="width:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+               data-ad-slot="4444444444"
+               data-ad-format="rectangle"
+               data-full-width-responsive="true"></ins>
+          <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
+      </div>
+
+      <div class="book-card reveal">
+        <div class="book-card-img c2"><span>📒</span><div class="book-badge">🆕 New</div></div>
         <div class="book-info">
           <div class="book-age">Ages 6–10</div>
           <h3>Money Habit Tracker</h3>
           <p>An interactive workbook with savings goals, chore charts, needs vs. wants worksheets, and reward systems.</p>
-          <div class="book-topics">
-            <span class="topic-tag">Budgeting</span>
-            <span class="topic-tag">Chores</span>
-            <span class="topic-tag">Habits</span>
-          </div>
+          <div class="book-topics"><span class="topic-tag">Budgeting</span><span class="topic-tag">Chores</span><span class="topic-tag">Habits</span></div>
           <div class="book-footer">
             <div class="book-price"><span class="orig">$22</span>$17.99</div>
             <a href="#" class="btn-buy">🛒 Buy Now</a>
@@ -961,18 +569,12 @@
       </div>
 
       <div class="book-card reveal">
-        <div class="book-card-img c3">
-          <span>📘</span>
-        </div>
+        <div class="book-card-img c3"><span>📘</span></div>
         <div class="book-info">
           <div class="book-age">Ages 8–12</div>
           <h3>Young Investor</h3>
           <p>Pip grows up! Learn about entrepreneurship, compound interest, and making your money work for you.</p>
-          <div class="book-topics">
-            <span class="topic-tag">Investing</span>
-            <span class="topic-tag">Business</span>
-            <span class="topic-tag">Interest</span>
-          </div>
+          <div class="book-topics"><span class="topic-tag">Investing</span><span class="topic-tag">Business</span><span class="topic-tag">Interest</span></div>
           <div class="book-footer">
             <div class="book-price">$15.99</div>
             <a href="#" class="btn-buy">🛒 Buy Now</a>
@@ -981,29 +583,39 @@
       </div>
 
       <div class="book-card reveal">
-        <div class="book-card-img c4">
-          <span>📕</span>
-          <div class="book-badge">🎁 Bundle Deal</div>
-        </div>
+        <div class="book-card-img c4"><span>📕</span><div class="book-badge">🎁 Bundle Deal</div></div>
         <div class="book-info">
           <div class="book-age">Ages 3–12</div>
           <h3>Complete Pip Junior Bundle</h3>
           <p>All books + the Money Habit Tracker + free digital downloads. The ultimate money education starter kit.</p>
-          <div class="book-topics">
-            <span class="topic-tag">All Topics</span>
-            <span class="topic-tag">Best Value</span>
-          </div>
+          <div class="book-topics"><span class="topic-tag">All Topics</span><span class="topic-tag">Best Value</span></div>
           <div class="book-footer">
             <div class="book-price"><span class="orig">$59</span>$42.99</div>
             <a href="#" class="btn-buy">🛒 Buy Bundle</a>
           </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
-<!-- ─── FREE TRACKER ─── -->
+<!-- ═══════════════════════════════════════════════════════
+     AD SLOT 5 — BANNER BETWEEN BOOKS & TRACKER
+     Best for: 728×90 or responsive.
+     Natural reading pause between two major sections.
+═══════════════════════════════════════════════════════ -->
+<div class="ad-slot ad-banner" data-label="Advertisement">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="5555555555"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- FREE TRACKER -->
 <section class="tracker-section" id="tracker">
   <div class="tracker-inner">
     <div class="tracker-content reveal">
@@ -1013,7 +625,7 @@
       <div class="tracker-features">
         <div class="tracker-feat"><div class="check">✓</div> My Savings Goal Sheet</div>
         <div class="tracker-feat"><div class="check">✓</div> Needs vs. Wants Chart</div>
-        <div class="tracker-feat"><div class="check">✓</div> Chores & Rewards Tracker</div>
+        <div class="tracker-feat"><div class="check">✓</div> Chores &amp; Rewards Tracker</div>
         <div class="tracker-feat"><div class="check">✓</div> Weekly Spending Log</div>
         <div class="tracker-feat"><div class="check">✓</div> Fun Sticker Rewards System</div>
       </div>
@@ -1029,7 +641,7 @@
         <div class="tracker-row"><span>Progress</span><span>28% 🌱</span></div>
       </div>
       <div class="tracker-sheet">
-        <h4>⭐ Chores & Rewards</h4>
+        <h4>⭐ Chores &amp; Rewards</h4>
         <div class="tracker-row"><span>Make Bed</span><span class="stars">★★★★★</span></div>
         <div class="tracker-row"><span>Water Plants</span><span class="stars">★★★☆☆</span></div>
         <div class="tracker-row"><span>Help Clean Up</span><span class="stars">★★★★☆</span></div>
@@ -1039,7 +651,7 @@
   </div>
 </section>
 
-<!-- ─── WHO IS IT FOR ─── -->
+<!-- WHO IS IT FOR -->
 <section class="audience-section" id="audience">
   <div class="audience-inner">
     <div class="audience-header reveal">
@@ -1060,7 +672,7 @@
       </div>
       <div class="audience-card parents reveal">
         <div class="audience-emoji">👨‍👩‍👧</div>
-        <h3>Parents & Carers</h3>
+        <h3>Parents &amp; Carers</h3>
         <p>Easy tools to spark meaningful money conversations at home — no awkward lectures needed.</p>
         <ul class="audience-list">
           <li>Read-together story format</li>
@@ -1071,7 +683,7 @@
       </div>
       <div class="audience-card teachers reveal">
         <div class="audience-emoji">👩‍🏫</div>
-        <h3>Teachers & Educators</h3>
+        <h3>Teachers &amp; Educators</h3>
         <p>Curriculum-friendly resources that bring financial literacy to life in the classroom.</p>
         <ul class="audience-list">
           <li>Classroom-ready activities</li>
@@ -1084,7 +696,22 @@
   </div>
 </section>
 
-<!-- ─── TESTIMONIALS ─── -->
+<!-- ═══════════════════════════════════════════════════════
+     AD SLOT 6 — BANNER BETWEEN AUDIENCE & TESTIMONIALS
+     Best for: 728×90 or responsive.
+     Mid-page engagement zone — users are highly engaged.
+═══════════════════════════════════════════════════════ -->
+<div class="ad-slot ad-banner" data-label="Advertisement">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="6666666666"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- TESTIMONIALS -->
 <section class="testimonials-section">
   <div class="testimonials-inner">
     <div class="testimonials-header reveal">
@@ -1097,42 +724,33 @@
         <blockquote>My 6-year-old now has three jars on her dresser — Save, Spend, Share. She set this up herself after reading Pip's First Dollar. I couldn't believe it!</blockquote>
         <div class="testimonial-author">
           <div class="author-avatar a1">👩</div>
-          <div>
-            <strong class="author-name">Sarah M.</strong>
-            <span class="author-role">Mom of 2, Texas</span>
-          </div>
+          <div><strong class="author-name">Sarah M.</strong><span class="author-role">Mom of 2, Texas</span></div>
         </div>
       </div>
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
-        <blockquote>I use these books in my Year 3 class. The kids are engaged from page one. It's one of those resources where they don't realize they're learning — they just think it's fun.</blockquote>
+        <blockquote>I use these books in my Year 3 class. The kids are engaged from page one. They don't realize they're learning — they just think it's fun.</blockquote>
         <div class="testimonial-author">
           <div class="author-avatar a2">👨</div>
-          <div>
-            <strong class="author-name">Mr. James T.</strong>
-            <span class="author-role">Primary School Teacher, UK</span>
-          </div>
+          <div><strong class="author-name">Mr. James T.</strong><span class="author-role">Primary School Teacher, UK</span></div>
         </div>
       </div>
       <div class="testimonial-card reveal">
         <div class="testimonial-stars">★★★★★</div>
-        <blockquote>We bought the full bundle and it was worth every penny. My son now understands why we budget and he even asked to start his own little savings jar. Priceless.</blockquote>
+        <blockquote>We bought the full bundle and it was worth every penny. My son now understands why we budget and he even asked to start his own savings jar. Priceless.</blockquote>
         <div class="testimonial-author">
           <div class="author-avatar a3">👩</div>
-          <div>
-            <strong class="author-name">Amara D.</strong>
-            <span class="author-role">Parent of 3, London</span>
-          </div>
+          <div><strong class="author-name">Amara D.</strong><span class="author-role">Parent of 3, London</span></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ─── FINAL CTA ─── -->
+<!-- FINAL CTA -->
 <section class="final-cta">
   <div class="final-cta-inner reveal">
-    <div style="font-size:3.5rem; margin-bottom:1rem;">🦉</div>
+    <div style="font-size:3.5rem;margin-bottom:1rem;">🦉</div>
     <h2>Start Your Child's<br>Money Journey Today</h2>
     <p>Join thousands of families giving their kids the financial head start they deserve.</p>
     <div class="final-btns">
@@ -1142,15 +760,30 @@
   </div>
 </section>
 
-<!-- ─── FOOTER ─── -->
+<!-- ═══════════════════════════════════════════════════════
+     AD SLOT 7 — FOOTER-TOP LEADERBOARD
+     Best for: 728×90 or 970×90.
+     Last impression before users leave the page.
+═══════════════════════════════════════════════════════ -->
+<div class="ad-slot ad-leaderboard" data-label="Advertisement" style="background:rgba(13,44,107,0.05);">
+  <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXXXXXXXX"
+       data-ad-slot="7777777777"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- FOOTER -->
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <div style="display:flex; align-items:center; gap:0.6rem;">
+      <div style="display:flex;align-items:center;gap:0.6rem;">
         <span style="font-size:2rem;">🦉</span>
         <div>
-          <div style="font-family:'Fredoka One',cursive; color:white; font-size:1.3rem;">PipJunior</div>
-          <div style="font-size:0.65rem; color:var(--gold); font-weight:700; letter-spacing:1.5px;">PUBLISHING</div>
+          <div style="font-family:'Fredoka One',cursive;color:white;font-size:1.3rem;">PipJunior</div>
+          <div style="font-size:0.65rem;color:var(--gold);font-weight:700;letter-spacing:1.5px;">PUBLISHING</div>
         </div>
       </div>
       <p>Empowering the next generation with smart money habits through stories, tools, and activities they actually love.</p>
@@ -1176,7 +809,7 @@
         <li><a href="#">Free Tracker Download</a></li>
         <li><a href="#">For Parents</a></li>
         <li><a href="#">For Teachers</a></li>
-        <li><a href="#">Blog & Tips</a></li>
+        <li><a href="#">Blog &amp; Tips</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -1196,45 +829,64 @@
 </footer>
 
 <script>
-  // Generate twinkling stars
-  const starsContainer = document.getElementById('hero-stars');
-  for (let i = 0; i < 60; i++) {
-    const star = document.createElement('div');
-    star.className = 'star';
-    star.style.left = Math.random() * 100 + '%';
-    star.style.top = Math.random() * 100 + '%';
-    star.style.animationDuration = (2 + Math.random() * 4) + 's';
-    star.style.animationDelay = (Math.random() * 5) + 's';
-    const size = Math.random() * 3 + 2;
-    star.style.width = size + 'px';
-    star.style.height = size + 'px';
-    starsContainer.appendChild(star);
-  }
+/* ── Twinkling stars ── */
+const starsContainer = document.getElementById('hero-stars');
+for (let i = 0; i < 60; i++) {
+  const star = document.createElement('div');
+  star.className = 'star';
+  star.style.left = Math.random() * 100 + '%';
+  star.style.top  = Math.random() * 100 + '%';
+  star.style.animationDuration = (2 + Math.random() * 4) + 's';
+  star.style.animationDelay    = (Math.random() * 5) + 's';
+  const size = Math.random() * 3 + 2;
+  star.style.width  = size + 'px';
+  star.style.height = size + 'px';
+  starsContainer.appendChild(star);
+}
 
-  // Floating coins
-  const coinsContainer = document.getElementById('coins-container');
-  const coinEmojis = ['💰', '🪙', '💵', '⭐', '✨'];
-  for (let i = 0; i < 8; i++) {
-    const coin = document.createElement('div');
-    coin.className = 'coin';
-    coin.textContent = coinEmojis[Math.floor(Math.random() * coinEmojis.length)];
-    coin.style.left = Math.random() * 100 + '%';
-    coin.style.animationDuration = (15 + Math.random() * 20) + 's';
-    coin.style.animationDelay = (Math.random() * 20) + 's';
-    coinsContainer.appendChild(coin);
-  }
+/* ── Floating coins ── */
+const coinsContainer = document.getElementById('coins-container');
+const coinEmojis = ['💰','🪙','💵','⭐','✨'];
+for (let i = 0; i < 8; i++) {
+  const coin = document.createElement('div');
+  coin.className = 'coin';
+  coin.textContent = coinEmojis[Math.floor(Math.random() * coinEmojis.length)];
+  coin.style.left              = Math.random() * 100 + '%';
+  coin.style.animationDuration = (15 + Math.random() * 20) + 's';
+  coin.style.animationDelay    = (Math.random() * 20) + 's';
+  coinsContainer.appendChild(coin);
+}
 
-  // Scroll reveal
-  const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 80);
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1 });
-  reveals.forEach(el => observer.observe(el));
+/* ── Scroll reveal ── */
+const reveals  = document.querySelectorAll('.reveal');
+const revealOb = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      revealOb.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+reveals.forEach(el => revealOb.observe(el));
+
+/* ── Hamburger ── */
+const hamburger = document.getElementById('hamburger');
+const navLinks  = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('open');
+  navLinks.classList.toggle('open');
+});
+navLinks.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => {
+    hamburger.classList.remove('open');
+    navLinks.classList.remove('open');
+  });
+});
+
+/* ── Back to top ── */
+const btt = document.getElementById('backToTop');
+window.addEventListener('scroll', () => btt.classList.toggle('show', window.scrollY > 500), { passive: true });
+btt.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 </script>
 </body>
 </html>
